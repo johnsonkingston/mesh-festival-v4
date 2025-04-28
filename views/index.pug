@@ -74,7 +74,7 @@ html(lang =lang)
                 //h2#headline.mobileH2
                     a(href="#headlineContent"). 
                         Mesh
-                h1=headline
+                h1 !{headline.replace(/\n/g, "</br>")}
             h2#statement.H2desktop.stickyNavItem(onclick="scrolltoContent('statementContent');")
                 a(href="#statementContent")=statement      
             div#statementContent.statement.section
