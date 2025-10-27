@@ -143,7 +143,7 @@ ul.navigation li:hover {
   color: rgba(var(--color1));
 }
 
-li, h2, #mc_embed_signup .button {
+li, h2, #newsletterbutton .button {
   display: inline-block;
   background-color: rgba(var(--color2));
   color: rgba(var(--color1));
@@ -158,7 +158,7 @@ li, h2, #mc_embed_signup .button {
   cursor: pointer;
 }
 @media (orientation: portrait) {
-  li, h2, #mc_embed_signup .button {
+  li, h2, #newsletterbutton .button {
     font-size: 5.625vw;
     line-height: 5.625vw;
     padding: 2vw 4vw 2vw 4vw;
@@ -173,7 +173,7 @@ h2:hover, li:hover {
   color: rgba(var(--color2));
 }
 
-.submit, input, #mc_embed_signup input {
+.submit, input, #newsletterbutton input {
   background-color: transparent;
   border: 0.2vw solid rgba(var(--color2));
   color: rgba(var(--color2));
@@ -189,7 +189,7 @@ h2:hover, li:hover {
   font-family: "FreeSans-JK", sans-serif;
 }
 @media (orientation: portrait) {
-  .submit, input, #mc_embed_signup input {
+  .submit, input, #newsletterbutton input {
     font-size: 7.5vw;
     line-height: 3.75vw;
     padding: 3vw 6vw;
@@ -198,13 +198,12 @@ h2:hover, li:hover {
   }
 }
 
-#mc_embed_signup .mc-field-group input {
-  width: 70%;
-  margin-top: 0.5vw;
+.newsletterfield {
+  margin-bottom: 2vw;
 }
 @media (orientation: portrait) {
-  #mc_embed_signup .mc-field-group input {
-    width: 90%;
+  .newsletterfield {
+    width: 80%;
   }
 }
 

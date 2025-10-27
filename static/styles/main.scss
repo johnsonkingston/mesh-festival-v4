@@ -139,7 +139,7 @@ ul.navigation{
             color: rgba(var(--color1));            
         }
     }
-    li, h2, #mc_embed_signup .button{
+    li, h2, #newsletterbutton .button{
         display: inline-block;
         background-color: rgba(var(--color2));
         color: rgba(var(--color1));
@@ -165,7 +165,7 @@ ul.navigation{
         background-color: rgba(var(--color1));
         color: rgba(var(--color2));            
     }
-    .submit, input, #mc_embed_signup input{
+    .submit, input, #newsletterbutton input{
         background-color: transparent;
         border: 0.2vw solid rgba(var(--color2));
         color: rgba(var(--color2));  
@@ -190,13 +190,12 @@ ul.navigation{
         }
 
     }
-    #mc_embed_signup .mc-field-group input{
-        width: 70%;
-        margin-top:0.5vw;
+
+    .newsletterfield{
+        margin-bottom:2vw;
         @media (orientation: portrait) {
-            width: 90%;
+            width: 80%;
         }
-  
     }
     .submit:hover{
         background-color: transparent;
