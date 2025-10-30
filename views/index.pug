@@ -122,8 +122,11 @@ html(lang =lang)
                 //CAMPAIGNMONITOR
                 div <div><form class="js-cm-form" id="subForm" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="30FEA77E7D0A9B8D7616376B90063231E8AC2D7B7A4E48AAD8A30931D7FFFFBBE2178267C3E20C1528B21524516C60496429782A002C1CFAE7FBEBBB7C944BDE"><div><div><label>Name</label><input id="fieldName" class="newsletterfield" maxlength="200" name="cm-name"></div><div><label>E-Mail</label><input autocomplete="Email" class="js-cm-email-input qa-input-email newsletterfield" id="fieldEmail" maxlength="200" name="cm-jtldbu-jtldbu" required="" type="email"></div></div><button type="submit" class="submit" id="newsletterbutton">Subscribe</button></form></div><script type="text/javascript" src="https://js.createsend1.com/javascript/copypastesubscribeformlogic.js"></script>
                 
-
-                //h3 !{jobsContent.replace(/\n/g, "<br />")}
+            h2.H2desktop.stickyNavItem(onclick="scrolltoContent('newsletterContent');")
+                a(href="#newsletterContent").
+                    Jobs        
+            div#newsletterContent.newsletter.section
+                h3 !{jobsContent.replace(/\n/g, "<br />")}
 
             div 
 

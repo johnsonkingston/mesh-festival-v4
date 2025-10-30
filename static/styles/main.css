@@ -587,8 +587,8 @@ label {
 .statement h1, .newsletter h1 {
   color: rgba(var(--color1));
   transition: color 1s linear;
-  width: 80%;
-  margin-left: 10%;
+  width: 90%;
+  margin-left: 5%;
 }
 .statement h3, .newsletter h3 {
   color: rgba(var(--color1));
