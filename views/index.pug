@@ -32,7 +32,7 @@ html(lang =lang)
                 @meshfestival
         #unmute 
             img(src="static/img/unmute.svg",onclick="unmute()")
-        //#opencall
+        #opencall
             a(href="#open").
                 Open Call
         div(id="status")
@@ -99,11 +99,14 @@ html(lang =lang)
                     a(href="#contactContent")=contact
                 h3 !{contactContent.replace(/\n/g, "<br />")}
                 h3 !{pressContact.replace(/\n/g, "<br />")}
-                //h1#open. 
+                h1#open. 
                     !{openCall.replace(/\n/g, "<br />")}
-                //h3 !{openCallContent.replace(/\n/g, "<br />")}
-                //li.submit
-                    a(href="https://forms.gle/LRHhwimD48FyQKsc6",target="_blank").
+                h3 !{openCallContent.replace(/\n/g, "<br />")}
+                li.submit
+                    a(href="static/pdf/MESH-OPEN-CALL-2026.pdf",target="_blank").
+                        !{openCallButton.replace(/\n/g, "<br />")}
+                li.submit
+                    a(href="https://docs.google.com/forms/d/1uItOHtugdVXlVhIUd9ihD2gnyI_ua8pPGHOcJXcBjyg/edit?pli=1",target="_blank").
                         Submit
                 h1. 
                     !{follow.replace(/\n/g, "<br />")}
