@@ -29,10 +29,11 @@ $lineHeight3: 6vw;
 $scaleFactor: 2.5;
 
 :root {
-    --color1:   215, 255, 0, 1;
+    --color1:   150, 150, 150, 1;
     --color2:   140, 110, 255, 1;
     --color3:   215,215,215,1;
     --color4:   0,0,0,0;
+    --color5:   233,71,121,1;
     }
 
 body{
@@ -47,7 +48,7 @@ body{
 }
 a{
     text-decoration: none; 
-    color: rgba(var(--color2));
+    color: rgba(var(--color1));
     transition: color 1s linear;
 
 }
@@ -70,32 +71,25 @@ p{
     display: none;
 }
 .column{
-    margin-left: 50vw;
-    width: 50vw;
-    position: absolute;
-    z-index: 11;
-    margin-top: calc(100vh - $padding*6);
+    margin-left: 0;
+    width: 100vw;
     padding-top: $padding;
     @media (orientation: portrait) {
         width:100%;
         margin-left: 0;
-        background: linear-gradient(0deg,  rgba(var(--color1))0%, rgba(var(--color3)) 30%);
+        background: white;
         background-attachment: fixed;
         padding-top: $padding*4;
     }
 
 }
 .columnBackground{
-    background: linear-gradient(0deg,  rgba(var(--color1))0%, rgba(var(--color3)) 30%);
-    background-attachment: fixed;
-    width:50vw;
+    background: white;
+    width:100%;
     height:100vh;
-    display: inline-block;
-    position: fixed;
     right:0;
     transition: all 1s;
     z-index: 9;
-    opacity: 0;
     @media (orientation: portrait) {
         display:none;
     }
@@ -106,7 +100,6 @@ p{
 .columnVideo{
     top:0;
     left:0;
-    position: fixed;
     overflow:hidden;
     width: 100vw;
     height: 100vh;
@@ -115,6 +108,31 @@ p{
     @media (orientation: portrait) {
         background-size: cover;
         background-position: center;
+    }
+}
+.columnTitle{
+    position: absolute;
+    top:0;
+    text-align: left;
+    max-height: 100vh;
+    overflow: scroll;
+    h1,h2,h3{
+        color: black;
+    }
+    h1,h2{
+        font-size: 18vw;
+        line-height: 14vw;
+        letter-spacing: -2vw;
+    }
+    h3{
+        font-size: 4.5vw;
+        line-height: 4.5vw;
+        width: 50%;
+        position: absolute;
+        bottom:0;
+        right:0;
+        padding-bottom: 0;
+
     }
 }
 ul.navigation{
@@ -139,7 +157,7 @@ ul.navigation{
             color: rgba(var(--color1));            
         }
     }
-    li, h2, #newsletterbutton .button{
+    li, #newsletterbutton .button{
         display: inline-block;
         background-color: rgba(var(--color2));
         color: rgba(var(--color1));
@@ -161,7 +179,7 @@ ul.navigation{
             border-radius: $lineHeight1*$scaleFactor*2;
         }
     }
-    h2:hover, li:hover{
+    li:hover{
         background-color: rgba(var(--color1));
         color: rgba(var(--color2));            
     }
@@ -203,15 +221,13 @@ ul.navigation{
         color: rgba(var(--color1));  
     }
 
- h1, .videoSubtitleLine{
-    font-family: 'FreeSerif-JK';
+ h1{
     font-size: $fontSize3;
     line-height: $lineHeight3;
     text-align: center;
     color: rgba(var(--color2));
     transition: color 1s linear;
-    padding-bottom: $padding*2;
-    padding-top: $padding*2;
+    padding-top: $padding;
 
     @media (orientation: portrait) {
         font-size: $fontSize3*$scaleFactor;
@@ -256,32 +272,7 @@ h1.color{
         font-size: $fontSize2*$scaleFactor;
     }
 }
-h2{
-    position: fixed;
-    bottom: 0.9vw;
-}
-.H2desktop{
-    @media (orientation: portrait) {
-           display: none;
-    }
-    a{
-        color:rgba(var(--color1));
-    }
-}
-.mobileH2{
-    display: none;
-    @media (orientation: portrait) {
-        display: table;
-    }
-    a{
-        color:rgba(var(--color1));
-    }
-    position: sticky;
-    position: -webkit-sticky;
-    top:0;
-    margin-left: 50%!important;
-    transform: translateX(-50%);
-}
+
 .stickyNavItem{
     position: sticky;
     top:$padding;
@@ -517,6 +508,7 @@ label{
     padding-bottom: 5vw;
     height: auto;
     h1{
+        font-family: "FreeSerif-JK";
         color: rgba(var(--color1));
         transition: color 1s linear;
         width:90%;
@@ -562,7 +554,6 @@ label{
         display: inline-block;
         vertical-align: top;
         padding: $padding*4;
-        padding-bottom: 5vw;  
         padding-top:$padding*2;
         margin-top:$padding;
         vertical-align: middle;
@@ -587,7 +578,7 @@ label{
         }
     }
     a, span{
-        color: white;
+        color:  rgba(var(--color1));
         font-size: $fontSize0;
         line-height: $lineHeight0;
         @media (orientation: portrait) {
@@ -602,6 +593,31 @@ label{
         @media (orientation: portrait) {
             margin-bottom: 20vw;
                 
+        }
+    }
+    @keyframes move {
+        from {transform: translateX(0)}
+        to {transform: translateX(-100%)}
+    }
+
+    .logobannerOuter{
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .logobannerInner{
+        transform: translateX(0);
+        animation: move 4s linear infinite;
+        display: inline-block;
+        width: fit-content;
+        white-space: nowrap;
+    }
+    .logobannerInnerSecond{
+        animation-duration: 10s;
+    }
+    .logobannerOuter:hover{
+        .logobannerInner{
+            animation-play-state: paused;
         }
     }
 }
@@ -625,7 +641,8 @@ label{
     transform: translateX(-50%);
 }
 #statementContent{
-    padding-bottom: 10vw;
+    width: 60%;
+    margin-left: 20%;
 }
 .program{
 
@@ -673,7 +690,7 @@ label{
      -2px 2px 0 #f00,
       2px 2px 0 #f00;
 }
-#lang, #insta, #opencall,#unmute{
+#lang, #insta, #mesh2024,#unmute, #calltoaction{
     position: fixed;
     right: $padding;
     top: $padding;
@@ -693,7 +710,12 @@ label{
         width: auto;      
         border-radius: $lineHeight1*$scaleFactor*2;
     }
+    a{
+        color: white;
+    }
 }
+
+
 #lang:hover, #insta:hover{
     background: rgba(var(--color2));
     color: rgba(var(--color1));   
@@ -701,9 +723,21 @@ label{
         color: rgba(var(--color1));   
     }
 }
-#insta, #opencall{
-    right: auto;
-    left: $padding;
+#insta, #mesh2024{
+    right: $padding;
+    bottom: $padding;
+    top: auto;
+}
+#calltoaction{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
+    width: fit-content;
+    background-color: rgba(var(--color5));
+}
+#calltoaction:hover{
+    background-color: rgba(var(--color1));
 }
 #unmute{
     right: auto;
@@ -722,12 +756,7 @@ label{
         }
     }
 }
-#opencall{
-    top: $padding*6;
-    @media (orientation: portrait) {
-        top: $padding*15;    
-    }
-}
+
 .meetingPoint{
     position: fixed;
     width:10vw;
@@ -742,7 +771,7 @@ label{
     }
 }
 .credits, .imprint{
-    color: white;
+    color: rgba(var(--color1));
     left:0;
     font-family: "FreeSans-JK";
     font-size: $fontSize0;
@@ -761,10 +790,10 @@ label{
         text-align: center;
     }
     a{
-        color: white;
+        color: rgba(var(--color1));
     }
     a:visited{
-        color:white;
+        color: rgba(var(--color1));
     }
     a:hover{
         text-decoration: underline;
@@ -786,6 +815,8 @@ label{
     margin-top: $padding*4;
     width:100%;
     text-align: center;
+    padding-bottom: $padding*2;
+    border-top: 1px solid rgba(var(--color1));
     img{
         padding: $padding;
         height: 5vw;
@@ -793,6 +824,11 @@ label{
             padding: 4vw;
             height: 15vw;        
         }       
+    }
+    div{
+        display: inline-block;
+        vertical-align: middle;
+        width: 33%;
     }
 }
 #cookieNotice{

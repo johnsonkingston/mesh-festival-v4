@@ -12,10 +12,11 @@
   font-display: swap;
 }
 :root {
-  --color1: 215, 255, 0, 1;
+  --color1: 150, 150, 150, 1;
   --color2: 140, 110, 255, 1;
   --color3: 215,215,215,1;
   --color4: 0,0,0,0;
+  --color5: 233,71,121,1;
 }
 
 body {
@@ -35,7 +36,7 @@ body {
 
 a {
   text-decoration: none;
-  color: rgba(var(--color2));
+  color: rgba(var(--color1));
   transition: color 1s linear;
 }
 
@@ -53,8 +54,7 @@ h1, h2, h3, h4 {
 p {
   margin-block-start: 0.5em;
   margin-block-end: 0.5em;
-  -webkit-hyphens: auto;
-          hyphens: auto;
+  hyphens: auto;
 }
 
 ::-webkit-scrollbar {
@@ -62,34 +62,27 @@ p {
 }
 
 .column {
-  margin-left: 50vw;
-  width: 50vw;
-  position: absolute;
-  z-index: 11;
-  margin-top: calc(100vh - 4.8vw);
+  margin-left: 0;
+  width: 100vw;
   padding-top: 0.8vw;
 }
 @media (orientation: portrait) {
   .column {
     width: 100%;
     margin-left: 0;
-    background: linear-gradient(0deg, rgba(var(--color1)) 0%, rgba(var(--color3)) 30%);
+    background: white;
     background-attachment: fixed;
     padding-top: 3.2vw;
   }
 }
 
 .columnBackground {
-  background: linear-gradient(0deg, rgba(var(--color1)) 0%, rgba(var(--color3)) 30%);
-  background-attachment: fixed;
-  width: 50vw;
+  background: white;
+  width: 100%;
   height: 100vh;
-  display: inline-block;
-  position: fixed;
   right: 0;
   transition: all 1s;
   z-index: 9;
-  opacity: 0;
 }
 @media (orientation: portrait) {
   .columnBackground {
@@ -104,7 +97,6 @@ p {
 .columnVideo {
   top: 0;
   left: 0;
-  position: fixed;
   overflow: hidden;
   width: 100vw;
   height: 100vh;
@@ -116,6 +108,31 @@ p {
     background-size: cover;
     background-position: center;
   }
+}
+
+.columnTitle {
+  position: absolute;
+  top: 0;
+  text-align: left;
+  max-height: 100vh;
+  overflow: scroll;
+}
+.columnTitle h1, .columnTitle h2, .columnTitle h3 {
+  color: black;
+}
+.columnTitle h1, .columnTitle h2 {
+  font-size: 18vw;
+  line-height: 14vw;
+  letter-spacing: -2vw;
+}
+.columnTitle h3 {
+  font-size: 4.5vw;
+  line-height: 4.5vw;
+  width: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-bottom: 0;
 }
 
 ul.navigation {
@@ -143,7 +160,7 @@ ul.navigation li:hover {
   color: rgba(var(--color1));
 }
 
-li, h2, #newsletterbutton .button {
+li, #newsletterbutton .button {
   display: inline-block;
   background-color: rgba(var(--color2));
   color: rgba(var(--color1));
@@ -158,7 +175,7 @@ li, h2, #newsletterbutton .button {
   cursor: pointer;
 }
 @media (orientation: portrait) {
-  li, h2, #newsletterbutton .button {
+  li, #newsletterbutton .button {
     font-size: 5.625vw;
     line-height: 5.625vw;
     padding: 2vw 4vw 2vw 4vw;
@@ -168,7 +185,7 @@ li, h2, #newsletterbutton .button {
   }
 }
 
-h2:hover, li:hover {
+li:hover {
   background-color: rgba(var(--color1));
   color: rgba(var(--color2));
 }
@@ -213,18 +230,16 @@ h2:hover, li:hover {
   color: rgba(var(--color1));
 }
 
-h1, .videoSubtitleLine {
-  font-family: "FreeSerif-JK";
+h1 {
   font-size: 7vw;
   line-height: 6vw;
   text-align: center;
   color: rgba(var(--color2));
   transition: color 1s linear;
-  padding-bottom: 1.6vw;
-  padding-top: 1.6vw;
+  padding-top: 0.8vw;
 }
 @media (orientation: portrait) {
-  h1, .videoSubtitleLine {
+  h1 {
     font-size: 17.5vw;
     line-height: 15vw;
   }
@@ -275,37 +290,6 @@ h1.color {
   .cursor {
     font-size: 5vw;
   }
-}
-
-h2 {
-  position: fixed;
-  bottom: 0.9vw;
-}
-
-@media (orientation: portrait) {
-  .H2desktop {
-    display: none;
-  }
-}
-.H2desktop a {
-  color: rgba(var(--color1));
-}
-
-.mobileH2 {
-  display: none;
-  position: sticky;
-  position: -webkit-sticky;
-  top: 0;
-  margin-left: 50% !important;
-  transform: translateX(-50%);
-}
-@media (orientation: portrait) {
-  .mobileH2 {
-    display: table;
-  }
-}
-.mobileH2 a {
-  color: rgba(var(--color1));
 }
 
 .stickyNavItem {
@@ -585,6 +569,7 @@ label {
   height: auto;
 }
 .statement h1, .newsletter h1 {
+  font-family: "FreeSerif-JK";
   color: rgba(var(--color1));
   transition: color 1s linear;
   width: 90%;
@@ -637,7 +622,6 @@ label {
   display: inline-block;
   vertical-align: top;
   padding: 3.2vw;
-  padding-bottom: 5vw;
   padding-top: 1.6vw;
   margin-top: 0.8vw;
   vertical-align: middle;
@@ -666,7 +650,7 @@ label {
   }
 }
 .logos a, .logos span {
-  color: white;
+  color: rgba(var(--color1));
   font-size: 1.1vw;
   line-height: 1.4vw;
 }
@@ -685,6 +669,33 @@ label {
   .logos h3 {
     margin-bottom: 20vw;
   }
+}
+@keyframes move {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.logos .logobannerOuter {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.logos .logobannerInner {
+  transform: translateX(0);
+  animation: move 4s linear infinite;
+  display: inline-block;
+  width: -moz-fit-content;
+  width: fit-content;
+  white-space: nowrap;
+}
+.logos .logobannerInnerSecond {
+  animation-duration: 10s;
+}
+.logos .logobannerOuter:hover .logobannerInner {
+  animation-play-state: paused;
 }
 
 .emoji {
@@ -709,7 +720,8 @@ label {
 }
 
 #statementContent {
-  padding-bottom: 10vw;
+  width: 60%;
+  margin-left: 20%;
 }
 
 .program h1 {
@@ -759,7 +771,7 @@ label {
   text-shadow: -2px -2px 0 #f00, 2px -2px 0 #f00, -2px 2px 0 #f00, 2px 2px 0 #f00;
 }
 
-#lang, #insta, #opencall, #unmute {
+#lang, #insta, #mesh2024, #unmute, #calltoaction {
   position: fixed;
   right: 0.8vw;
   top: 0.8vw;
@@ -774,13 +786,16 @@ label {
   z-index: 10;
 }
 @media (orientation: portrait) {
-  #lang, #insta, #opencall, #unmute {
+  #lang, #insta, #mesh2024, #unmute, #calltoaction {
     font-size: 5vw;
     line-height: 5.5vw;
     padding: 2vw;
     width: auto;
     border-radius: 7.5vw;
   }
+}
+#lang a, #insta a, #mesh2024 a, #unmute a, #calltoaction a {
+  color: white;
 }
 
 #lang:hover, #insta:hover {
@@ -791,9 +806,24 @@ label {
   color: rgba(var(--color1));
 }
 
-#insta, #opencall {
-  right: auto;
-  left: 0.8vw;
+#insta, #mesh2024 {
+  right: 0.8vw;
+  bottom: 0.8vw;
+  top: auto;
+}
+
+#calltoaction {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: rgba(var(--color5));
+}
+
+#calltoaction:hover {
+  background-color: rgba(var(--color1));
 }
 
 #unmute {
@@ -818,15 +848,6 @@ label {
   }
 }
 
-#opencall {
-  top: 4.8vw;
-}
-@media (orientation: portrait) {
-  #opencall {
-    top: 12vw;
-  }
-}
-
 .meetingPoint {
   position: fixed;
   width: 10vw;
@@ -844,7 +865,7 @@ label {
 }
 
 .credits, .imprint {
-  color: white;
+  color: rgba(var(--color1));
   left: 0;
   font-family: "FreeSans-JK";
   font-size: 1.1vw;
@@ -866,10 +887,10 @@ label {
   }
 }
 .credits a, .imprint a {
-  color: white;
+  color: rgba(var(--color1));
 }
 .credits a:visited, .imprint a:visited {
-  color: white;
+  color: rgba(var(--color1));
 }
 .credits a:hover, .imprint a:hover {
   text-decoration: underline;
@@ -891,6 +912,8 @@ label {
   margin-top: 3.2vw;
   width: 100%;
   text-align: center;
+  padding-bottom: 1.6vw;
+  border-top: 1px solid rgba(var(--color1));
 }
 .footer img {
   padding: 0.8vw;
@@ -901,6 +924,11 @@ label {
     padding: 4vw;
     height: 15vw;
   }
+}
+.footer div {
+  display: inline-block;
+  vertical-align: middle;
+  width: 33%;
 }
 
 #cookieNotice {
