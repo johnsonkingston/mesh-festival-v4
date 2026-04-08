@@ -115,24 +115,57 @@ p{
     top:0;
     text-align: left;
     max-height: 100vh;
+    height: 100vh;
+    width: 100vw;
     overflow: scroll;
     h1,h2,h3{
         color: black;
     }
     h1,h2{
-        font-size: 18vw;
-        line-height: 14vw;
-        letter-spacing: -2vw;
+        font-size: 28vh;
+        line-height: 21.5vh;
+        letter-spacing: -3.5vh;
+        width: 100%;
+                @media (orientation: portrait) {
+                    font-size: 32vw;
+                    line-height: 25vw;
+                    letter-spacing: -3.9vw;               
+                }
     }
+
     h3{
-        font-size: 4.5vw;
-        line-height: 4.5vw;
-        width: 50%;
+        font-size: 8vh;
+        line-height: 7.5vh;
+        width: 48%;
         position: absolute;
         bottom:0;
         right:0;
         padding-bottom: 0;
-
+                @media (orientation: portrait) {
+                    font-size: 5vw;
+                    line-height: 5vw;
+                    width: 50vw;
+                    position: relative;
+                    margin-left: 58%;
+                    margin-top: -11vw;          
+                }
+    }
+    h4{
+        font-family: "FreeSans-JK";
+        color: black;
+        font-size: 2vw;
+        line-height: 2.2vw;
+        text-align: left;
+        position: absolute;
+        top: calc(100vh - 2.5vw);
+        left: 0.5vw;
+                @media (orientation: portrait) {
+                    font-size: 5vw;
+                    line-height: 5vw;
+                    width: 70vw;
+                    top: calc(100vh - 11.5vw);
+                    left: 2vw;
+                }
     }
 }
 ul.navigation{
@@ -230,8 +263,8 @@ ul.navigation{
     padding-top: $padding;
 
     @media (orientation: portrait) {
-        font-size: $fontSize3*$scaleFactor;
-        line-height: $lineHeight3*$scaleFactor;
+        font-size: 15vw;
+        line-height: 12.5vw;
     }
 }
 .videoSubtitleLine{
@@ -303,18 +336,7 @@ h3{
         transition: color 1s linear;
     }
     }
-h4{
-    font-weight: bold;
-    font-family: 'FreeSerif-JK';
-    font-size: $fontSize2*2;
-    line-height: $lineHeight2*2;       
-    text-align: center;
-    width:60%;
-    margin-left: 20%;  
-    color: rgba(var(--color1));
-    transition: color 1s linear;
-    padding-bottom: $padding;
-}
+
 hr{
     margin-block-start: 0;
     margin-block-end: 0;
@@ -607,13 +629,13 @@ label{
     }
     .logobannerInner{
         transform: translateX(0);
-        animation: move 4s linear infinite;
+        animation: move 6s linear infinite;
         display: inline-block;
         width: fit-content;
         white-space: nowrap;
     }
     .logobannerInnerSecond{
-        animation-duration: 10s;
+        animation-duration: 15s;
     }
     .logobannerOuter:hover{
         .logobannerInner{
@@ -643,6 +665,10 @@ label{
 #statementContent{
     width: 60%;
     margin-left: 20%;
+    @media (orientation: portrait) {
+        width: 90%;
+        margin-left: 5%;
+    }
 }
 .program{
 
@@ -735,6 +761,9 @@ label{
     top: 50%;
     width: fit-content;
     background-color: rgba(var(--color5));
+    @media (orientation: portrait) {
+        top: 70%;
+    }
 }
 #calltoaction:hover{
     background-color: rgba(var(--color1));

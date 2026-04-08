@@ -115,24 +115,63 @@ p {
   top: 0;
   text-align: left;
   max-height: 100vh;
+  height: 100vh;
+  width: 100vw;
   overflow: scroll;
 }
 .columnTitle h1, .columnTitle h2, .columnTitle h3 {
   color: black;
 }
 .columnTitle h1, .columnTitle h2 {
-  font-size: 18vw;
-  line-height: 14vw;
-  letter-spacing: -2vw;
+  font-size: 28vh;
+  line-height: 21.5vh;
+  letter-spacing: -3.5vh;
+  width: 100%;
+}
+@media (orientation: portrait) {
+  .columnTitle h1, .columnTitle h2 {
+    font-size: 32vw;
+    line-height: 25vw;
+    letter-spacing: -3.9vw;
+  }
 }
 .columnTitle h3 {
-  font-size: 4.5vw;
-  line-height: 4.5vw;
-  width: 50%;
+  font-size: 8vh;
+  line-height: 7.5vh;
+  width: 48%;
   position: absolute;
   bottom: 0;
   right: 0;
   padding-bottom: 0;
+}
+@media (orientation: portrait) {
+  .columnTitle h3 {
+    font-size: 5vw;
+    line-height: 5vw;
+    width: 50vw;
+    position: relative;
+    margin-left: 58%;
+    margin-top: -11vw;
+  }
+}
+.columnTitle h4 {
+  font-family: "FreeSans-JK";
+  color: black;
+  font-size: 2vw;
+  line-height: 2.2vw;
+  text-align: left;
+  position: absolute;
+  top: calc(100vh - 2.5vw);
+  left: 0.5vw;
+}
+@media (orientation: portrait) {
+  .columnTitle h4 {
+    font-size: 5vw;
+    line-height: 5vw;
+    width: 70vw;
+    top: calc(100vh - 11.5vw);
+    left: 2vw;
+  }
 }
 
 ul.navigation {
@@ -240,8 +279,8 @@ h1 {
 }
 @media (orientation: portrait) {
   h1 {
-    font-size: 17.5vw;
-    line-height: 15vw;
+    font-size: 15vw;
+    line-height: 12.5vw;
   }
 }
 
@@ -326,19 +365,6 @@ h3 {
 h3 a {
   color: rgba(var(--color1));
   transition: color 1s linear;
-}
-
-h4 {
-  font-weight: bold;
-  font-family: "FreeSerif-JK";
-  font-size: 4vw;
-  line-height: 4.4vw;
-  text-align: center;
-  width: 60%;
-  margin-left: 20%;
-  color: rgba(var(--color1));
-  transition: color 1s linear;
-  padding-bottom: 0.8vw;
 }
 
 hr {
@@ -685,14 +711,14 @@ label {
 }
 .logos .logobannerInner {
   transform: translateX(0);
-  animation: move 4s linear infinite;
+  animation: move 6s linear infinite;
   display: inline-block;
   width: -moz-fit-content;
   width: fit-content;
   white-space: nowrap;
 }
 .logos .logobannerInnerSecond {
-  animation-duration: 10s;
+  animation-duration: 15s;
 }
 .logos .logobannerOuter:hover .logobannerInner {
   animation-play-state: paused;
@@ -722,6 +748,12 @@ label {
 #statementContent {
   width: 60%;
   margin-left: 20%;
+}
+@media (orientation: portrait) {
+  #statementContent {
+    width: 90%;
+    margin-left: 5%;
+  }
 }
 
 .program h1 {
@@ -820,6 +852,11 @@ label {
   width: -moz-fit-content;
   width: fit-content;
   background-color: rgba(var(--color5));
+}
+@media (orientation: portrait) {
+  #calltoaction {
+    top: 70%;
+  }
 }
 
 #calltoaction:hover {
