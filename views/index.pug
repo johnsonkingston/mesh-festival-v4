@@ -43,16 +43,14 @@ html(lang =lang)
 
         .columnVideo.mobile
             //h2=mobile
-            video.mobileVideo(id="video",data-src="https://johnsonkingston.ch/MESH/Mesh_2026.mp4",autoplay="true",loop="true",muted="true",playsinline="true",poster="static/img/mesh-Festival-videoCover.jpg")        
+            video.mobileVideo(id="video",data-src="https://johnsonkingston.ch/MESH/Mesh_2026.mp4",autoplay="true",loop="true",muted="true",playsinline="true",poster="static/img/poster-video.jpg")        
         .columnTitle   
             h1 Mesh 
-            h2 14.–18. Oktober
-                br
-                | 2026
+            h2=date
             h3 Freilager-Platz 
                 br
                 | Dreispitz Basel
-            h4 Mesh – Festival für Kunst und Technologie
+            h4=infos
 
         script.
             function videoLoad(){ 
@@ -144,7 +142,7 @@ html(lang =lang)
                         div
                             a(href="static/html/datenschutz.html" target="_blank")=disclaimer
                                 br
-                            a(href="static/html/datenschutz.html" target="_blank") Impressum
+                            a(href="static/html/imprint.html" target="_blank") Impressum
                         div
                             a(href="https://www.instagram.com/meshfestival/",target="_blank")
                                 img(src="static/img/icons/sm-icon-02.svg")
