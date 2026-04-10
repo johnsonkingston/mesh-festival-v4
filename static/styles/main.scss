@@ -571,7 +571,7 @@ label{
     text-align: center;
 }
 .logos{
-    margin-top:10vw;
+    margin-top:0;
     text-align: center;
     img{
         height: 2.5vw;
@@ -584,7 +584,8 @@ label{
         vertical-align: middle;
         @media (orientation: portrait) {
             height: 6vw;     
-            padding-bottom: 12vw;  
+            padding-bottom: 6vw;  
+            padding-top: 6vw;  
         }
     }
     .logofooterlang{
@@ -609,6 +610,13 @@ label{
         @media (orientation: portrait) {
             font-size: $fontSize2*$scaleFactor;
             line-height: $lineHeight2*$scaleFactor;        
+        }
+    }
+    span{
+        @media (orientation: portrait) {
+            width: 90%;
+            margin-left: 5%;
+            display: block;
         }
     }
     h3{

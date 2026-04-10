@@ -642,7 +642,7 @@ label {
 }
 
 .logos {
-  margin-top: 10vw;
+  margin-top: 0;
   text-align: center;
 }
 .logos img {
@@ -658,7 +658,8 @@ label {
 @media (orientation: portrait) {
   .logos img {
     height: 6vw;
-    padding-bottom: 12vw;
+    padding-bottom: 6vw;
+    padding-top: 6vw;
   }
 }
 .logos .logofooterlang {
@@ -687,6 +688,13 @@ label {
   .logos a, .logos span {
     font-size: 5vw;
     line-height: 5.5vw;
+  }
+}
+@media (orientation: portrait) {
+  .logos span {
+    width: 90%;
+    margin-left: 5%;
+    display: block;
   }
 }
 .logos h3 {
