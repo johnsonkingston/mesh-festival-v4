@@ -12,7 +12,7 @@
   font-display: swap;
 }
 :root {
-  --color1: 150, 150, 150, 1;
+  --color1: 0, 0, 0, 1;
   --color2: 140, 110, 255, 1;
   --color3: 215,215,215,1;
   --color4: 0,0,0,0;
@@ -64,7 +64,7 @@ p {
 .column {
   margin-left: 0;
   width: 100vw;
-  padding-top: 0.8vw;
+  padding-top: 8vw;
 }
 @media (orientation: portrait) {
   .column {
@@ -127,6 +127,7 @@ p {
   line-height: 21.5vh;
   letter-spacing: -3.5vh;
   width: 100%;
+  color: white;
 }
 @media (orientation: portrait) {
   .columnTitle h1, .columnTitle h2 {
@@ -143,6 +144,7 @@ p {
   bottom: 0;
   right: 0;
   padding-bottom: 0;
+  color: white;
 }
 @media (orientation: portrait) {
   .columnTitle h3 {
@@ -163,6 +165,7 @@ p {
   position: absolute;
   top: calc(100vh - 2.5vw);
   left: 0.5vw;
+  color: white;
 }
 @media (orientation: portrait) {
   .columnTitle h4 {
@@ -647,7 +650,7 @@ label {
   width: auto;
   display: inline-block;
   vertical-align: top;
-  padding: 3.2vw;
+  padding: 1.6vw;
   padding-top: 1.6vw;
   margin-top: 0.8vw;
   vertical-align: middle;
@@ -704,6 +707,14 @@ label {
     transform: translateX(-100%);
   }
 }
+@keyframes move2 {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
 .logos .logobannerOuter {
   width: 100%;
   overflow: hidden;
@@ -711,14 +722,14 @@ label {
 }
 .logos .logobannerInner {
   transform: translateX(0);
-  animation: move 6s linear infinite;
+  animation: move 10s linear infinite;
   display: inline-block;
   width: -moz-fit-content;
   width: fit-content;
   white-space: nowrap;
 }
 .logos .logobannerInnerSecond {
-  animation-duration: 15s;
+  animation: move2 40s linear infinite;
 }
 .logos .logobannerOuter:hover .logobannerInner {
   animation-play-state: paused;
@@ -830,11 +841,8 @@ label {
   color: white;
 }
 
-#lang:hover, #insta:hover {
-  background: rgba(var(--color2));
-  color: rgba(var(--color1));
-}
-#lang:hover a, #insta:hover a {
+#lang:hover, #insta:hover, #mesh2024:hover, #unmute:hover, #calltoaction:hover {
+  background: rgba(var(--color5));
   color: rgba(var(--color1));
 }
 

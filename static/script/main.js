@@ -1,4 +1,4 @@
-const socket = io();
+//const socket = io();
 
 var currentMembers = [];
 var fixedElements = [];
@@ -9,9 +9,9 @@ var windowWidth = $(window).width();
 var windowHeight = $(window).height();
 
 var id;
-var idSelf = socket.id;
+//var idSelf = socket.id;
 
-var currentMousePos = { id: idSelf, x: -1, y: -1 };
+//var currentMousePos = { id: idSelf, x: -1, y: -1 };
 
 function newJoin(data){
     console.log(data.id+' joined!');
@@ -42,66 +42,66 @@ function clearStatus(){
 
 
 
-$(document).mousemove(function(event) {
-    currentMousePos.x = event.clientX/windowWidth;
-    currentMousePos.y = event.clientY/windowHeight;
-    socket.emit('move',currentMousePos);
-});  
+//$(document).mousemove(function(event) {
+    //currentMousePos.x = event.clientX/windowWidth;
+    //currentMousePos.y = event.clientY/windowHeight;
+    // socket.emit('move',currentMousePos);
+//});  
 
-socket.on('moveTo', function(data){
-    if(data.id in currentMembers){
-        $('#'+data.id).css('left',data.x*windowWidth);
-        $('#'+data.id).css('top',data.y*windowHeight);      
-    }else{
-        newJoin(data);
-    }
-});
+// socket.on('moveTo', function(data){
+//     if(data.id in currentMembers){
+//         $('#'+data.id).css('left',data.x*windowWidth);
+//         $('#'+data.id).css('top',data.y*windowHeight);      
+//     }else{
+//         newJoin(data);
+//     }
+// });
 
-function removeItem(arr, value) {
-    var index = arr.indexOf(value);
-    if (index > -1) {
-      arr.splice(index, 1);
-    }
-    return arr;
-  }
-
-
-socket.on('left', function(data){
-    console.log(data+' left!');
-    $('#status').html('<div class="status">'+data.substr(0,4).toUpperCase()+' left!</div>');
-    $('#'+data).remove();
-    $('#member'+data).remove();
-    console.log(currentMembers);
-    removeItem(currentMembers, data);
-    setTimeout(() => {
-        clearStatus();
-    }, "2000");
-});
-
-function sendJoined(){
-    socket.emit('move',0);
-}
-sendJoined();
-setInterval(sendJoined, 2000);
+// function removeItem(arr, value) {
+//     var index = arr.indexOf(value);
+//     if (index > -1) {
+//       arr.splice(index, 1);
+//     }
+//     return arr;
+//   }
 
 
-function meeting(element){
-    var meetingPoint = {};
-    meetingPoint.x = parseInt($(element).css('left'))/windowWidth;
-    meetingPoint.y = parseInt($(element).css('top'))/windowHeight;
-    socket.emit('meeting', meetingPoint);
-}
+// socket.on('left', function(data){
+//     console.log(data+' left!');
+//     $('#status').html('<div class="status">'+data.substr(0,4).toUpperCase()+' left!</div>');
+//     $('#'+data).remove();
+//     $('#member'+data).remove();
+//     console.log(currentMembers);
+//     removeItem(currentMembers, data);
+//     setTimeout(() => {
+//         clearStatus();
+//     }, "2000");
+// });
 
-socket.on('meetingSend', function(data){
-    var meetingID = new Date().getTime();
-    $('body').append('<div class="meetingPoint" id="meet_'+meetingID+'" style="left:'+data.x*100+'vw;top:'+data.y*100+'vh;"><img src="static/img/meetings/'+Math.floor(Math.random() * (32 - 1 + 1) + 1)+'.jpg"></div>');
-    setTimeout(() => {
-        $('#meet_'+meetingID).fadeOut( "slow", function() {
-            $('#meet_'+meetingID).remove();
-        });
-      }, "2000");
+// function sendJoined(){
+//     socket.emit('move',0);
+// }
+// sendJoined();
+// setInterval(sendJoined, 2000);
 
-});
+
+// function meeting(element){
+//     var meetingPoint = {};
+//     meetingPoint.x = parseInt($(element).css('left'))/windowWidth;
+//     meetingPoint.y = parseInt($(element).css('top'))/windowHeight;
+//     socket.emit('meeting', meetingPoint);
+// }
+
+// socket.on('meetingSend', function(data){
+//     var meetingID = new Date().getTime();
+//     $('body').append('<div class="meetingPoint" id="meet_'+meetingID+'" style="left:'+data.x*100+'vw;top:'+data.y*100+'vh;"><img src="static/img/meetings/'+Math.floor(Math.random() * (32 - 1 + 1) + 1)+'.jpg"></div>');
+//     setTimeout(() => {
+//         $('#meet_'+meetingID).fadeOut( "slow", function() {
+//             $('#meet_'+meetingID).remove();
+//         });
+//       }, "2000");
+
+// });
 
 
 
