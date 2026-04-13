@@ -141,7 +141,7 @@ p {
   line-height: 7.5vh;
   width: 48%;
   position: absolute;
-  bottom: 0;
+  bottom: 0.5vw;
   right: 0;
   padding-bottom: 0;
   color: white;
@@ -163,8 +163,8 @@ p {
   line-height: 2.2vw;
   text-align: left;
   position: absolute;
-  top: calc(100vh - 2.5vw);
-  left: 0.5vw;
+  top: calc(100vh - 3vw);
+  left: 1vw;
   color: white;
 }
 @media (orientation: portrait) {
@@ -856,8 +856,14 @@ label {
 
 #insta, #mesh2024 {
   right: 0.8vw;
-  bottom: 0.8vw;
-  top: auto;
+  top: 4.5vw;
+}
+@media (orientation: portrait) {
+  #insta, #mesh2024 {
+    top: auto;
+    bottom: 1.5vw;
+    right: 1.5vw;
+  }
 }
 
 #calltoaction {
