@@ -27,11 +27,11 @@ body {
 }
 
 ::-moz-selection {
-  background: rgba(var(--color1));
+  background: rgba(var(--color5));
 }
 
 ::selection {
-  background: rgba(var(--color1));
+  background: rgba(var(--color5));
 }
 
 a {
