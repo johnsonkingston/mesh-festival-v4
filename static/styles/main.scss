@@ -612,6 +612,9 @@ label{
             line-height: $lineHeight2*$scaleFactor;        
         }
     }
+    a:hover{
+        text-shadow: 0 0 10px black;
+    }
     span{
         @media (orientation: portrait) {
             width: 90%;
@@ -776,13 +779,19 @@ label{
     transform: translateX(-50%);
     top: 50%;
     width: fit-content;
-    background-color: rgba(var(--color5));
+    background: rgba(var(--color5));
+    color:white;
     @media (orientation: portrait) {
         top: 70%;
     }
 }
 #calltoaction:hover{
-    background-color: rgba(var(--color1));
+
+        background: white;
+        a{
+            color: rgba(var(--color5));
+        }
+        
 }
 #unmute{
     right: auto;
@@ -868,12 +877,19 @@ label{
 
     }
     img{
-        padding: $padding;
-        height: 5vw;
+        margin: 0.8vw;
+            height: 5vw;
+            box-shadow: 10 10 0 black;
+            background: white;
+            padding: 0;
+            border-radius: 50%;
         @media (orientation: portrait) {
             padding: 4vw;
             height: 15vw;        
         }       
+    }
+    img:hover{
+        box-shadow: 0 0 10px black;
     }
     div{
         display: inline-block;
@@ -893,7 +909,7 @@ label{
     width: 300px;
     background:white;
     padding:10px;
-    border: 0.4vw solid rgba(var(--color2));
+    border: 0.4vw solid rgba(var(--color5));
     font-size: $fontSize1;
     line-height: $lineHeight1*1.2;
     @media (orientation: portrait) {
@@ -905,7 +921,7 @@ label{
         margin:0;
         padding:0;
         font-family: 'FreeSans-JK';
-        color:  rgba(var(--color2));
+        color:  rgba(var(--color5));
         font-size: $fontSize1;
         line-height: $lineHeight1;
         @media (orientation: portrait) {
@@ -914,7 +930,7 @@ label{
         }
     }
     button{
-        background-color: rgba(var(--color2));
+        background-color: rgba(var(--color5));
         color: rgba(var(--color1));
         transition: color 1s linear;
         transition: background-color 1s linear;
