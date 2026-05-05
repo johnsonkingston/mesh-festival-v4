@@ -612,6 +612,9 @@ label {
   margin-top: 10vw;
   width: 80%;
 }
+.statement b, .newsletter b {
+  text-shadow: 0 0 5px rgba(var(--color5));
+}
 
 .contact {
   padding-bottom: 10vw;
