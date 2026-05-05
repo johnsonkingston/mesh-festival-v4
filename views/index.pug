@@ -72,7 +72,7 @@ html(lang =lang)
         div.column
             div#statementContent.statement.section
  
-                h1=theme
+                h1 !{theme.replace(/\n/g, "<br />")}
                  
                 h3
                     p !{statementContent.replace(/\n/g, "</p><p>")}

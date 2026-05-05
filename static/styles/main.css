@@ -17,6 +17,7 @@
   --color3: 215,215,215,1;
   --color4: 0,0,0,0;
   --color5: 233,71,121,1;
+  --color6: 254,247,246,1;
 }
 
 body {
@@ -24,6 +25,7 @@ body {
   margin: 0;
   overscroll-behavior: none;
   -webkit-overflow-scrolling: touch;
+  background: rgba(var(--color6));
 }
 
 ::-moz-selection {
@@ -70,14 +72,14 @@ p {
   .column {
     width: 100%;
     margin-left: 0;
-    background: white;
+    background: rgba(var(--color6));
     background-attachment: fixed;
     padding-top: 3.2vw;
   }
 }
 
 .columnBackground {
-  background: white;
+  background: rgba(var(--color6));
   width: 100%;
   height: 100vh;
   right: 0;
@@ -127,7 +129,7 @@ p {
   line-height: 21.5vh;
   letter-spacing: -3.5vh;
   width: 100%;
-  color: white;
+  color: rgba(var(--color6));
 }
 @media (orientation: portrait) {
   .columnTitle h1, .columnTitle h2 {
@@ -144,7 +146,7 @@ p {
   bottom: 0.5vw;
   right: 0;
   padding-bottom: 0;
-  color: white;
+  color: rgba(var(--color6));
 }
 @media (orientation: portrait) {
   .columnTitle h3 {
@@ -165,7 +167,7 @@ p {
   position: absolute;
   top: calc(100vh - 3vw);
   left: 1vw;
-  color: white;
+  color: rgba(var(--color6));
 }
 @media (orientation: portrait) {
   .columnTitle h4 {
@@ -852,7 +854,7 @@ label {
   }
 }
 #lang a, #insta a, #mesh2024 a, #unmute a, #calltoaction a {
-  color: white;
+  color: rgba(var(--color6));
 }
 
 #lang:hover, #insta:hover, #mesh2024:hover, #unmute:hover, #calltoaction:hover {
@@ -880,7 +882,7 @@ label {
   width: -moz-fit-content;
   width: fit-content;
   background: rgba(var(--color5));
-  color: white;
+  color: rgba(var(--color6));
 }
 @media (orientation: portrait) {
   #calltoaction {
@@ -889,7 +891,7 @@ label {
 }
 
 #calltoaction:hover {
-  background: white;
+  background: rgba(var(--color6));
 }
 #calltoaction:hover a {
   color: rgba(var(--color5));
@@ -966,7 +968,7 @@ label {
 }
 .credits u, .imprint u {
   text-decoration: none;
-  border: 1px solid white;
+  border: 1px solid rgba(var(--color6));
   border-radius: 50%;
 }
 
@@ -994,7 +996,7 @@ label {
   margin: 0.8vw;
   height: 5vw;
   box-shadow: 10 10 0 black;
-  background: white;
+  background: rgba(var(--color6));
   padding: 0;
   border-radius: 50%;
 }
@@ -1025,7 +1027,7 @@ label {
   bottom: 10px;
   right: 50px;
   width: 300px;
-  background: white;
+  background: rgba(var(--color6));
   padding: 10px;
   border: 0.4vw solid rgba(var(--color5));
   font-size: 1.5vw;

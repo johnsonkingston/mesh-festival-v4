@@ -34,6 +34,7 @@ $scaleFactor: 2.5;
     --color3:   215,215,215,1;
     --color4:   0,0,0,0;
     --color5:   233,71,121,1;
+    --color6:   254,247,246,1;
     }
 
 body{
@@ -41,6 +42,7 @@ body{
     margin:0;
     overscroll-behavior: none;
     -webkit-overflow-scrolling: touch;
+    background: rgba(var(--color6));
 
 }
 ::selection {
@@ -77,14 +79,14 @@ p{
     @media (orientation: portrait) {
         width:100%;
         margin-left: 0;
-        background: white;
+        background: rgba(var(--color6));
         background-attachment: fixed;
         padding-top: $padding*4;
     }
 
 }
 .columnBackground{
-    background: white;
+    background: rgba(var(--color6));
     width:100%;
     height:100vh;
     right:0;
@@ -126,7 +128,7 @@ p{
         line-height: 21.5vh;
         letter-spacing: -3.5vh;
         width: 100%;
-        color:white;
+        color:rgba(var(--color6));
                 @media (orientation: portrait) {
                     font-size: 32vw;
                     line-height: 25vw;
@@ -142,7 +144,7 @@ p{
         bottom:0.5vw;
         right:0;
         padding-bottom: 0;
-        color:white;
+        color:rgba(var(--color6));
                 @media (orientation: portrait) {
                     font-size: 5vw;
                     line-height: 5vw;
@@ -161,7 +163,7 @@ p{
         position: absolute;
         top: calc(100vh - 3vw);
         left: 1vw;
-         color:white;
+         color:rgba(var(--color6));
                @media (orientation: portrait) {
                     font-size: 5vw;
                     line-height: 5vw;
@@ -757,7 +759,7 @@ label{
         border-radius: $lineHeight1*$scaleFactor*2;
     }
     a{
-        color: white;
+        color: rgba(var(--color6));
     }
 }
 
@@ -783,14 +785,14 @@ label{
     top: 66%;
     width: fit-content;
     background: rgba(var(--color5));
-    color:white;
+    color:rgba(var(--color6));
     @media (orientation: portrait) {
         top: 70%;
     }
 }
 #calltoaction:hover{
 
-        background: white;
+        background: rgba(var(--color6));
         a{
             color: rgba(var(--color5));
         }
@@ -857,7 +859,7 @@ label{
     }
     u{
         text-decoration: none;
-        border: 1px solid white;
+        border: 1px solid rgba(var(--color6));
         border-radius: 50%;
     }
 }
@@ -883,7 +885,7 @@ label{
         margin: 0.8vw;
             height: 5vw;
             box-shadow: 10 10 0 black;
-            background: white;
+            background: rgba(var(--color6));
             padding: 0;
             border-radius: 50%;
         @media (orientation: portrait) {
@@ -910,7 +912,7 @@ label{
     bottom:10px;
     right: 50px;
     width: 300px;
-    background:white;
+    background:rgba(var(--color6));
     padding:10px;
     border: 0.4vw solid rgba(var(--color5));
     font-size: $fontSize1;
