@@ -44,7 +44,7 @@ body{
 
 }
 ::selection {
-    background: rgba(var(--color5));
+    background: rgba(var(--color3));
 }
 a{
     text-decoration: none; 
@@ -780,7 +780,7 @@ label{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 50%;
+    top: 66%;
     width: fit-content;
     background: rgba(var(--color5));
     color:white;

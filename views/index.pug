@@ -46,7 +46,7 @@ html(lang =lang)
             video.mobileVideo(id="video",data-src="https://johnsonkingston.ch/MESH/Mesh_2026.mp4",autoplay="true",loop="true",muted="true",playsinline="true",poster="static/img/poster-video.jpg")        
         .columnTitle   
             h1 Mesh 
-            h2=date
+            h2 !{date.replace(/\n/g, "<br />")}
             h3 Freilager-Platz 
                 br
                 | Dreispitz Basel

@@ -27,11 +27,11 @@ body {
 }
 
 ::-moz-selection {
-  background: rgba(var(--color5));
+  background: rgba(var(--color3));
 }
 
 ::selection {
-  background: rgba(var(--color5));
+  background: rgba(var(--color3));
 }
 
 a {
@@ -876,7 +876,7 @@ label {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 50%;
+  top: 66%;
   width: -moz-fit-content;
   width: fit-content;
   background: rgba(var(--color5));
