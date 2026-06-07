@@ -36,7 +36,7 @@ const server = app.listen(serverPort, () => {
         }
         }
       });
-    console.log('App running on port '+serverPort);
+    console.log('App running on http://localhost:'+serverPort);
 });
 
 // Renders
