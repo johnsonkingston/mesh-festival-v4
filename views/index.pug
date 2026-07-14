@@ -26,23 +26,22 @@ html(lang =lang)
         meta(name="robots",content="max-image-preview:large")
         meta(name="google-site-verification", content="TNAoxn34J4XEOzd8PTJtXvliDdC8DqZFmlmGiJ4_IxQ")
 
-    body 
-        //#insta
-            a(href="https://instagram.com/meshfestival/",target="_blank").
-                @meshfestival
-        //#unmute 
-            img(src="static/img/unmute.svg",onclick="unmute()")
+    body(class=newsContent ? '' : 'no-news')
+        if newsContent
+            #newsTicker
+                .newsTickerTrack
+                    .newsTickerInner!= newsContent
+                    .newsTickerInner!= newsContent
+
         #mesh2024
             a(href="https://2024.meshfestival.ch" target="_blank").
                 Mesh 2024
         #calltoaction
             a(href="https://meshfestival.ch/static/html/tickets.html" target="_blank").
                 Get your Early Bird Ticket Now!
-        //div(id="status")
-        //div(id="members")
+
 
         .columnVideo.mobile
-            //h2=mobile
             video.mobileVideo(id="video",data-src="https://johnsonkingston.ch/MESH/Mesh_2026.mp4",autoplay="true",loop="true",muted="true",playsinline="true",poster="static/img/poster-video.jpg")        
         .columnTitle   
             h1 Mesh 
@@ -54,28 +53,17 @@ html(lang =lang)
 
         script.
             function videoLoad(){ 
-                //if($(window).width()<$(window).height()){
-                    //$('.desktop').css('display','none');
                     $('.mobileVideo').attr('src',$('.mobileVideo').attr('data-src'));  
                     $('.mobileVideo').attr('id','mainVideo');  
-
-                //- }else{
-                //-     $('.mobile').css('display','none');
-                //-     $('.desktopVideo').each(function( index ) {
-                //-         $(this).attr('src',$(this).attr('data-src'));                 
-                //-     });
-                //-     $('.desktopVideo').first().attr('id','mainVideo');  
-
-                //- }
             }
             videoLoad();
         div.column
             div#statementContent.statement.section
  
                 h1 !{theme.replace(/\n/g, "<br />")}
-                 
+
                 h3
-                    p !{statementContent.replace(/\n/g, "</p><p>")}
+                    div!= statementContent
 
           
             div 

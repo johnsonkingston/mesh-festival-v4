@@ -39,6 +39,43 @@ const server = app.listen(serverPort, () => {
     console.log('App running on http://localhost:'+serverPort);
 });
 
+//Startpage content (theme/statementContent) from backend
+async function getStartpage() {
+    try {
+        const response = await fetch("https://env-9468449.appengine.flow.ch/items/Startpage?fields[]=*.*");
+        if (!response.ok) {
+            console.log('Startpage fetch not ok: '+response.status);
+            return null;
+        }
+        const data = await response.json();
+        return data.data || null;
+    } catch (err) {
+        console.error(err);
+        return null;
+    }
+}
+
+async function renderStartpage(lang, res) {
+    const locals = Object.assign({}, language_dict[lang]);
+
+    const startpage = await getStartpage();
+    const translations = startpage ? startpage.title : null;
+    const translation = translations
+        ? translations.find(t => t.languages_code === lang)
+        : null;
+
+    locals.newsContent = null;
+    if (translation) {
+        locals.theme = translation.Title || locals.theme;
+        locals.statementContent = translation.Content || locals.statementContent;
+        if (startpage.Show_News) {
+            locals.newsContent = translation.News || null;
+        }
+    }
+
+    res.render('index', locals);
+}
+
 // Renders
 app.get('/robots.txt', function (req, res) {
     res.type('text/plain');
@@ -46,13 +83,13 @@ app.get('/robots.txt', function (req, res) {
 });
 
 app.get('/',(req,res) => {
-    res.render('index', language_dict.de);
+    renderStartpage('de', res);
   });
 app.get('/de',(req,res) => {
-    res.render('index', language_dict.de);
-}); 
+    renderStartpage('de', res);
+});
 app.get('/en',(req,res) => {
-    res.render('index', language_dict.en);
+    renderStartpage('en', res);
 });
 
 //Websocket
