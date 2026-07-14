@@ -28,6 +28,10 @@ body {
   background: rgba(var(--color6));
 }
 
+::-moz-selection {
+  background: rgba(var(--color3));
+}
+
 ::selection {
   background: rgba(var(--color3));
 }
@@ -433,7 +437,8 @@ hr {
 }
 
 video {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   height: 100vh;
   width: 100vw;
 }
@@ -651,7 +656,8 @@ label {
   width: 80%;
 }
 .statement b, .statement strong, .newsletter b, .newsletter strong {
-  text-shadow: 0 0 5px rgba(var(--color5));
+  font-family: "FreeSerif-JK";
+  font-size: 112%;
 }
 .statement blockquote, .newsletter blockquote {
   margin: 0;
@@ -798,6 +804,7 @@ label {
   transform: translateX(0);
   animation: move 10s linear infinite;
   display: inline-block;
+  width: -moz-fit-content;
   width: fit-content;
   white-space: nowrap;
 }
@@ -1007,6 +1014,7 @@ label {
   left: 50%;
   transform: translateX(-50%);
   top: 66%;
+  width: -moz-fit-content;
   width: fit-content;
   background: rgba(var(--color5));
   color: rgba(var(--color6));
@@ -1207,6 +1215,4 @@ label {
     line-height: 6.75vw;
     border-radius: 3.75vw;
   }
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
