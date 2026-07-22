@@ -562,6 +562,7 @@ label{
         margin-top: $lineHeight2*0.5;
         @media (orientation: portrait) {
             margin-top: $lineHeight2*0.5*$scaleFactor;  
+            line-height: $lineHeight2*$scaleFactor*1.2; 
         }
     }
     h3, p{

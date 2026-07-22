@@ -635,6 +635,7 @@ label {
 @media (orientation: portrait) {
   .statement h2, .newsletter h2 {
     margin-top: 2.75vw;
+    line-height: 6.6vw;
   }
 }
 .statement h3, .statement p, .newsletter h3, .newsletter p {
