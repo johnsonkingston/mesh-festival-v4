@@ -602,7 +602,11 @@ label{
         font-size: 112%;
     }
     a{
-        text-decoration: dotted;
+        border-bottom: 0.3vw dotted;
+        @media (orientation: portrait) {
+            border-bottom: 1vw dotted;
+            margin-bottom: -1vw;
+        }
     }
     a:hover{
                 text-shadow: 0 0 10px black;

@@ -678,8 +678,13 @@ label {
   font-size: 112%;
 }
 .statement a, .newsletter a {
-  -webkit-text-decoration: dotted;
-          text-decoration: dotted;
+  border-bottom: 0.3vw dotted;
+}
+@media (orientation: portrait) {
+  .statement a, .newsletter a {
+    border-bottom: 1vw dotted;
+    margin-bottom: -1vw;
+  }
 }
 .statement a:hover, .newsletter a:hover {
   text-shadow: 0 0 10px black;
