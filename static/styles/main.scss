@@ -555,28 +555,43 @@ label{
         margin-left:5%;
     }
     h2{
-        line-height: $lineHeight2;
+        line-height: $lineHeight2*1.5;
+        font-size: $fontSize2*1.5;
+        font-family: "FreeSans-JK";
         padding: 0;
         background: transparent;
         overflow: visible;
         margin-top: $lineHeight2*0.5;
         @media (orientation: portrait) {
             margin-top: $lineHeight2*0.5*$scaleFactor;  
-            line-height: $lineHeight2*$scaleFactor*1.2; 
+            font-size: $fontSize2*1.5*$scaleFactor;
+            line-height: $lineHeight2*1.5*$scaleFactor;
         }
     }
+    h3{
+        font-family: "FreeSerif-JK";
+        line-height: $lineHeight2*1.5;
+        font-size: $fontSize2*1.5;
+        @media (orientation: portrait) {
+            font-size: $fontSize2*1.5*$scaleFactor;
+            line-height: $lineHeight2*1.5*$scaleFactor;
+        }    
+    }
+    p{
+        font-family: "FreeSans-JK";
+        line-height: $lineHeight2;
+        font-size: $fontSize2;          
+        @media (orientation: portrait) {
+            font-size: $fontSize2*$scaleFactor;
+            line-height: $lineHeight2*$scaleFactor;
+        }    
+        }
     h3, p{
         color:rgba(var(--color1));
         transition: color 1s linear;
-        line-height: $lineHeight2;
         padding: 0;
         margin-top: $lineHeight2*0.5;
-        @media (orientation: portrait) {
-            line-height: $lineHeight2*$scaleFactor;
-            font-size: $fontSize2*$scaleFactor;
-            margin-top: $lineHeight2*0.5*$scaleFactor;
 
-        }
     }
     img{
         margin-top:10vw;
@@ -585,6 +600,12 @@ label{
     b, strong{
         font-family: 'FreeSerif-JK';
         font-size: 112%;
+    }
+    a{
+        text-decoration: dotted;
+    }
+    a:hover{
+                text-shadow: 0 0 10px black;
     }
     blockquote{
         margin: 0;

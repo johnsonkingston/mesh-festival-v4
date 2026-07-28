@@ -39,10 +39,12 @@ const server = app.listen(serverPort, () => {
     console.log('App running on http://localhost:'+serverPort);
 });
 
+const directusUrl = "https://env-9468449.appengine.flow.ch";
+
 //Startpage content (theme/statementContent) from backend
 async function getStartpage() {
     try {
-        const response = await fetch("https://env-9468449.appengine.flow.ch/items/Startpage?fields[]=*.*");
+        const response = await fetch(directusUrl+"/items/Startpage?fields[]=*.*.*");
         if (!response.ok) {
             console.log('Startpage fetch not ok: '+response.status);
             return null;
@@ -61,17 +63,35 @@ async function renderStartpage(lang, res) {
     const startpage = await getStartpage();
     const translations = startpage ? startpage.title : null;
     const translation = translations
-        ? translations.find(t => t.languages_code === lang)
+        ? translations.find(t => (t.languages_code.code || t.languages_code) === lang)
         : null;
 
     locals.newsContent = null;
     if (translation) {
         locals.theme = translation.Title || locals.theme;
         locals.statementContent = translation.Content || locals.statementContent;
+        locals.initiative = translation.Logos_Line_1_Title || locals.initiative;
+        locals.sponsor = translation.Logos_Line_2_Title || locals.sponsor;
+        locals.logosLine3Title = translation.Logos_Line_3_Title || null;
         if (startpage.Show_News) {
             locals.newsContent = translation.News || null;
         }
     }
+
+    locals.logosLine3 = startpage && startpage.Logos_Line_3 || null;
+
+    const mapLogos = entries => (entries || [])
+        .map(entry => entry.directus_files_id)
+        .filter(file => file)
+        .map(file => ({
+            src: directusUrl+"/assets/"+file.id,
+            href: file.description || null,
+            title: file.title || file.filename_download || '',
+            tags: file.tags || []
+        }));
+
+    locals.logosLine1 = mapLogos(startpage && startpage.Logos_Line_1);
+    locals.logosLine2 = mapLogos(startpage && startpage.Logos_Line_2);
 
     res.render('index', locals);
 }
