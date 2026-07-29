@@ -44,7 +44,16 @@
 </head>
 <body>
    <h2>Mesh<br>14. – 18. Oktober 2026</h2>
- <div id="ticket-shop-1ad2"></div><script src="https://embed.ticketpark.ch/v1/?c=ticket-shop-1ad2&p=1AD2991E-E384-4A17-944B-
-BECCA863237B"></script>
-   
+
+<script src="https://embed.ticketpark.ch/v1/"></script>
+<div id="mesh-ticket-shop"></div>
+<script>
+new ticketpark.Auto("#mesh-ticket-shop",{
+pid: "1AD2991E-E384-4A17-944B-BECCA863237B",
+language: "de",
+showFields: ["name","start","venue","button"],
+customCssFiles: "https://static.ticketpark.ch/hosts/mesh_festival/2026/mesh26.css",
+texts: {"de": { "title_event": "Wählen den gewünschten Tag aus"}}
+});
+</script>   
 </body></html>
